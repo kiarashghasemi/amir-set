@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Make changes
         run: |
@@ -19,8 +19,8 @@ jobs:
 
       - name: Commit & Push
         run: |
-          git config --global user.name "your-name"
-          git config --global user.email "your-email@example.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add .
           git commit -m "daily update" || echo "no changes"
           git push
